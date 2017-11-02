@@ -1,0 +1,146 @@
+/*ALL BASIC STYLING HERE, MUST BE RESUABLE, KEEP MINIMAL*/
+
+html {
+	font-size: 17px;
+}
+
+body {
+	font-family: 'Lato', san-serif;
+	font-weight: 700;
+	line-height: 1.45;
+	color: #01343f;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	margin-bottom: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 1.414em 0 0.5em;
+	font-weight: inherit;
+	line-height: 1.2;
+	color: #0caace;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: 2.618em;
+}
+
+h2 {
+	font-size: 1.618em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+small,
+.font_small {
+	font-size: 0.618em;
+}
+
+
+/*
+body {
+  	font-family: 'Crimson Text', serif;
+	font-size: 1.125rem;
+  	line-height: 1.618;
+    color: #313943;
+	
+ }
+*/
+
+
+/*
+ h1,h2,h3,h4,h5,h6 {
+	 font-family: 'Lato', sans-serif;
+	 margin-top: 0;
+	 line-height: 1.1;
+     color: #31acc8;
+ }
+*/
+
+
+/*
+ h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: .12rem;
+    margin-bottom: 0.8em;
+ }
+
+ h2 {
+   font-weight: 600;
+   font-size: 2.2rem;
+   margin-bottom: 1em;
+ }
+
+ h3 {
+   font-weight: 600;
+   font-size: 1.6rem;
+   margin-bottom: 1.3em;
+ }
+*/
+
+a,
+a:visited {
+	text-decoration: none;
+	color: #313943;
+	cursor: pointer;
+	transition: all .3s
+}
+
+
+/* a:active */
+
+a:hover {
+	color: #31acc8;
+}
+
+label {
+	font-family: 'Lato', sans-serif;
+	vertical-align: bottom;
+	margin-bottom: .5rem;
+}
+
+input,
+textarea {
+	padding: 10px;
+	box-sizing: border-box;
+	background: none;
+	outline: none;
+	resize: none;
+	border: 0;
+	font-family: 'Lato', sans-serif;
+	transition: all .3s;
+}
+
+input:focus {
+	border-bottom: 2px solid #78788c
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+	height: 2.3125rem;
+}
+
+input[type="radio"] {
+	transform: scale(1);
+	margin-right: 5px;
+	vertical-align: baseline;
+}
+
+textarea {
+	width: 100%;
+	max-width: 30rem;
+	height: 13rem;
+	resize: none;
+	border: 0;
+}

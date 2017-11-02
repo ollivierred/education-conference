@@ -1,0 +1,120 @@
+
+<?php
+    include 'includes/arrays.php';
+	require './includes/header.php';
+?>
+
+	
+	<div class="banner">	
+ 	<?php  include 'includes/navigation.php'; ?>
+		
+		<div class="wrapper block-padding">
+			<div class="is-centered">
+				<img src="assets/images/logo/banner_text.svg" style="display: block; width:100%; max-width: 18em; margin: auto;" alt="Education Conference 2017">
+				<img src="assets/images/logo/banner_text_extra.svg" style="display: block; width:100%; max-width: 18em; margin: auto; margin-top: 25px;" alt="Finance and Entrepreneurial Activities in Higher Education: Challenges and Perspectives">
+				<p>
+					<span class="tagline-text tagline-text__small">Date: April 28, 2017</span>
+<!--						<span class="tagline-text">Venue: ADA University</span>-->
+<!--						<span class="tagline-text">Baku - Azerbaijan</span>-->
+				</p>
+				<p><a href="page_agenda.php" class="btn btn--mod">VIEW AGENDA</a></p>
+				<!--				<p class="tagline-text">APRIL 28, BAKU AZERBAIJAN</p>-->
+			</div>
+		</div>
+	</div>
+
+    <main>
+		<div class="wrapper block-padding is-centered clearfix">
+			<section class="intro-block intro-block__med">
+				<h1>Empower Higher Education, Establish Public Private Partnership</h1>
+				<p>
+					<span class="text-block">Education Conference 2017, aims to increase and empower delegates from four different areas: policy makers, researchers, NGO’s,  entrepreneurs and private businesses to discuss alternative ways of income generation through establishing public private partnership, alumni engagement, and translational universities.</span>
+				</p>
+			</section>		
+
+			<p class="button-block">
+				<a href="page_about.php" class="btn btn--mod">READ MORE</a>
+			</p>
+		</div>
+		
+		<div  style="background-color: #e0f5f9;">
+			<section class="is-centered block-padding">
+			<h1 class="">Conference Speakers</h1>
+				
+			<ol class="speakers clearfix">
+				<?php foreach ($speakerlist as $speaker) { ?>
+					<li class="speaker-block">
+						<img class="column-list__frame" src="assets/images/speaker_profile/<?php echo $speaker['img']; ?>.jpg"
+							 alt="<?php echo $speaker['name']; ?>">
+						<dl>
+							<dt class="speaker-block__title"><h2><?php echo $speaker['name']; ?></h2></dt>
+							<dd class="speaker-block__caption">
+								<div class="caption-top">
+									<?php echo $speaker['institution']; ?>
+								</div>
+								<div class="caption-bottom">
+									<?php echo $speaker['position']; ?>
+								</div>
+
+							</dd>
+						</dl>
+					</li>
+				<?php } ?>
+			</ol>
+			</section>
+		</div>
+
+		<section class="wrapper">
+<!--			<h2>Venues and Dates</h2>-->
+<!--
+			<div class="map-block map-block__info">
+				<section class="text-block--small venue-block__content">
+					<dt>
+						<h3 class="venue-block__tagline">&#40;Baku&#41; Venue and Date</h3>
+					</dt>
+					<dd>
+						11 Ahmadbey Aghaoglu Street,<br>
+						Baku AZ1008, Azerbaijan.
+					</dd>
+					<dd class="caption--mod">
+						Date: April 28, 2017
+					</dd>
+				</section>
+
+				<section class="text-block--small venue-block__content">
+					<dt>
+						<h3 class="venue-block__tagline">&#40;Ganja&#41; Venue and Date</h3>
+					</dt>
+					<dd>
+						103 H. Aliyev Avenue,<br>
+						Ganja AZ2011, Azerbaijan.
+					</dd>
+					<dd class="caption--mod">
+						Date: April 30, 2017
+					</dd>
+				</section>
+			</div>
+-->
+			<div id="map" class="map-canvas"></div>
+			<script type="text/javascript" src="assets/js/map.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3oWmIunWi8SSD7HlYZnFsxgTVsMQMCGQ&callback=initMap" async defer></script>
+		</section>
+		
+		<!--  call-to-action-block  -->
+		<section class="is-centered" style="background-color: #e0f5f9;">
+			<div class="wrapper">
+				<h2 class="text-block text-block__small">Get The Latest Education Conference News and Updates</h2>
+				<form>
+					<p>
+						<input class="mlist-form__field" type="email" name="Email" placeholder="Enter email here">
+						<button class="mlist-btn btn disabled" type="submit" disabled>SUBSCRIBE</button>
+					</p>
+				</form>
+			</div>
+		</section>
+
+		<?php include 'includes/sponsors.php'; ?>
+		<!-- END OF OUTER BLOCK-->	
+	</main>
+
+	<?php include './includes/footer.php'; ?>

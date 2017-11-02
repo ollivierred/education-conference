@@ -1,0 +1,69 @@
+<?php
+$companyName = "Education Conference";
+include 'includes/arrays.php';
+include 'includes/header.php';
+?>
+	
+		
+    <div class="banner">
+		<?php  include 'includes/navigation.php'; ?>
+		
+        <div class="wrapper block-padding">
+            <div class="is-centered">
+                <h1 class="tagline-text tagline-text__large">Organizers</h1>
+            </div>
+        </div>
+    </div>
+
+    <main>
+		<div class="wrapper">
+			<div class="block-padding is-centered">
+				<section class="block-padding">
+					<h2 class="is-centered">Meet the Hard Working Organizers</h2>
+					
+					<ol class="is-centered clearfix">			
+					<?php foreach ($organizerCommittee as $organizerMember) { ?>
+						<li class="profile__rows m-2-columns t-3-columns">
+							<img class="profile column-list__frame" 
+								 src="assets/images/profile/<?php echo $organizerMember['img']; ?>.jpg" 
+								 alt="<?php echo $organizerMember['name']; ?>">
+							<dl>
+								<dt><h3><?php echo $organizerMember['name']; ?></h3></dt>
+								<dd class="caption">
+									<div>
+										<?php echo $organizerMember['position']; ?>
+									</div>
+								</dd>
+							</dl>
+						</li>
+					<?php   }   ?>
+					</ol>
+				</section>
+
+				<!--REVIEW COMMITTEE SECTION-->
+				<section class="block-padding">
+					<h2 class="is-centered">Our Review Committee</h2>
+					<ol class="is-centered clearfix">		
+					<?php  foreach ($reviewCommittee as $committeeMember) {  ?>
+						<li class="profile__rows m-2-columns t-3-columns">
+								<img class="profile column-list__frame" 
+                                     src="assets/images/profile/<?php echo $committeeMember['img']; ?>.jpg" 
+                                     alt="<?php echo $committeeMember['name']; ?>">
+								<dl>
+									<dt><h3><?php echo $committeeMember['name']; ?></h3></dt>
+									<dd class="caption">
+										<div>
+											<?php echo $committeeMember['bio']; ?>
+										</div>
+									</dd>
+								</dl>
+						</li>
+					<?php   }   ?>
+					</ol>
+				</section>
+
+			</div>
+		</div>
+	</main>
+
+	<?php include('includes/footer.php'); ?>

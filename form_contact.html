@@ -1,0 +1,119 @@
+<?php
+$companyName="Education Conference";
+include './includes/header.php';
+?>
+
+	<div class="banner">
+		<div class="wrapper block-padding">
+			<div class="is-centered">
+				<h1>
+					Contact Us
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<main>
+		
+    <?php
+        $errors = [];
+        $missing = [];
+        
+        if (isset($_POST['submitting'])) {
+        //Detect form submission
+        $expected = ['user_name', 'user_email', 'user_subject', 'user_comment'];
+        $required = ['user_name', 'user_email', 'user_comment'];
+
+        // Check $_POST arrary
+        foreach ($_POST as $form_input => $form_value) {
+            $form_value = trim($form_value);
+            
+                if (empty($form_value) && in_array($form_input, $required)) {
+                    $missing[] = $form_input;
+                    $$form_input = '';
+                } elseif (in_array($form_input, $expected)){
+                    $$form_input = $form_value;
+                }
+        }
+
+    ?>
+		
+		<div class="form-block is-centered">
+            <form id="contactform" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+                <fieldset class="form-frame">
+
+                    <?php if ($errors || $missing) : ?>
+                    <p class="title-warning"> Please fill the field(s) indicated</p>
+                    <?php endif; ?>
+
+                    <ul class="form-inner left-aligned">
+                        <li class="form-row">
+                            <label for="name" class="form-label">Full Name 
+                                <span class="required">&#42;</span>
+<!--             error message php snippet here      -->
+                            <?php if ($missing && in_array('user_name', $missing)) : ?>
+                                <p class="warning">Please enter your full name</p>
+                            <?php endif; ?>
+                            </label>
+                            <input id="name" type="text" name="user_name" 
+                                   class="form-field" placeholder="enter your full name" autofocus
+                                   <?php  if ($errors || $missing)  {
+                                       echo 'value="' . htmlentities($user_name) . '"';
+                                   } ?>
+                            >
+                        </li>
+
+                        <li class="form-row">
+                            <label for="email" class="form-label">E-mail address
+                                <span class="required">&#42;</span>
+<!--             error message php snippet here          -->
+                            <?php if ($missing && in_array('user_email', $missing)) : ?>
+                                <p class="warning">Please enter an email address</p>
+                            <?php elseif (isset($errors['user_email'])) : ?>
+                                <p class="warning">Invalid email address</p>
+                            <?php endif; ?>
+                            </label>
+                            <input id="email"  class="form-field" type="email" name="user_email" 
+                                   placeholder="your@email.com"
+                                   <?php  if ($errors || $missing)  {
+                                       echo 'value="' . htmlentities($user_email) . '"';
+                                   } ?>       
+                            >
+                        </li>
+
+                        <li class="form-row">
+                            <label for="subject" class="form-label">Subject
+                                <span class="required">&#42;</span>
+<!--             error message php snippet here          -->
+                            <?php if ($missing && in_array('user_subject', $missing)) : ?>
+                                <p class="warning">Please enter a subject for this message</p>
+                            <?php endif; ?>
+                            </label>
+                            <input id="subject" type="text" name="user_subject" class="form-field"
+                                   <?php  if ($errors || $missing)  {
+                                       echo 'value="' . htmlentities($user_subject) . '"';
+                                   } ?>
+                            >
+                        </li>
+
+                        <li class="form-row">
+                            <label for="message" class="form-label">Message
+<!--             error message php snippet here          -->
+                            <?php if ($missing && in_array('user_comment', $missing)) : ?>
+                                <p class="warning">This message must have content</p>
+                            <?php endif; ?>
+                            </label>
+                            <textarea id="message" class="form-field" name="user_comment" 
+                                      placeholder="Type your message here..."><?php 
+                                if ($errors || $missing) {
+                                   echo htmlentities($user_comment);   
+                                }
+                                ?></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
+                    <input type="submit" name="submitting" class="form--btn btn" value="SEND">
+            </form>
+		</div>
+	</main>
+<?php include 'includes/footer.php'; ?>

@@ -1,0 +1,121 @@
+html {
+/*	border-top: 4px solid green;*/
+}
+
+.nav-block__inner {
+	position: relative;
+}
+
+.navigation__logo {
+	box-sizing: content-box;
+	margin: auto;
+	display: block;
+	max-width: 210px;
+	overflow: hidden;
+}
+
+.navigation__toggle {
+	font-size: 25px;
+	line-height: 45px;
+	color: #31acc8;
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	border-top: 3px solid #31acc8;
+}
+
+.navlist {
+	padding-bottom: 10px;
+}
+
+.navlist__link {
+	line-height: 50px;
+	padding: 0 15px;
+	display: block;
+}
+
+.navlist__sublist {
+    background-color: rgba(0, 0, 0, 0.72);
+    border-top: .3rem solid rgb(49, 172, 200);
+    border-radius: 0 0 3px 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+	.navlist__link, .navlist__link:visited {
+		color: #d4d4d4;
+	}
+	.navlist__link:hover {
+		color: #31acc8;
+	}
+
+.navlist-cta {
+	border: 3px solid #31acc8;
+	text-align: center;
+}
+
+.navlist__icon {
+	float: right;
+	font-size: 22px;
+}
+
+@media only screen and (min-width: 1000px) {
+	html {
+/*		border-top: 4px solid blue;*/
+	}
+	.view-is-mobile {
+		display: none;
+	}
+	.navigation-head {}
+	.navigation__logo {
+		width: 170px;
+	}
+	.nav-block__inner {
+		display: inline-block !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		vertical-align: bottom;
+	}
+	.navlist {
+		float: right;
+	}
+	.navlist__item {
+		display: inline-block;
+	}
+	.navlist__link {
+		font-size: 16px;
+		line-height: 40px;
+	}
+	.navlist__sublist {
+        position: absolute;
+        z-index: 30;
+        background-color: rgba(0, 0, 0, 0.72);
+        border-top: .3rem solid rgb(49, 172, 200);
+        border-radius: 0 0 3px 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+	}
+		.sublist__link {
+			color: #d4d4d4;
+		}
+	
+	.navlist__icon {
+		margin-left: 8px;
+		font-size: 22px;
+	}
+}
+
+@media only screen and (min-width: 67.500em) {
+	html {
+/*		border-top: 4px solid #31acc8;*/
+	}
+}
+
+.nav-extra {
+	display: block;
+	height: 25px;
+	width: 100%;
+	background-color: #31acc8;
+}

@@ -1,0 +1,110 @@
+<?php
+	$companyName = "Education Conference";
+	include('includes/header.php');
+?>
+
+	<div class="banner">
+		<div class="wrapper block-padding">
+			<div class="is-centered">
+				<h1>
+					Delegate Registration
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<main>
+		<div class="form-block is-centered">
+            <form id="reg-form" method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+                <fieldset class="form-frame">
+
+                    <p class="reg-form__details">Fields with an (&#42;) are required.</p>
+
+                    <ul class="form-inner left-aligned">
+                        <li class="form-row">
+                            <label for="firstname" class="form-label">First Name 
+                                <span class="required">&#42;</span></label>
+                            <input id="firstname" type="text" name="firstname_input" class="form-field" placeholder="First name here" required autofocus>
+                        </li>
+                        
+                        <li class="form-row">
+                            <label for="lastname" class="form-label">Last Name 
+                                <span class="required">&#42;</span></label>
+                            <input id="lastname" type="text" name="lastname_input" class="form-field" placeholder="Last name here" required autofocus>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="country" class="form-label">Country
+                                <span class="required">&#42;</span>
+                            </label>
+                            <input id="country" type="text" name="country" 
+                                   placeholder="Where are you from" class="form-field" required>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="email" class="form-label">E-mail address
+                                <span class="required">&#42;</span>
+                            </label>
+                            <input id="email" type="email" name="email" placeholder="your@email.com" class="form-field" required>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="mobile" class="form-label">Telephone
+                                <span class="required">&#42;</span>
+                            </label>
+                            <input id="mobile" type="tel" name="mobile" maxlength="14" placeholder="Phone number here" class="form-field" required>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="school" class="form-label">University/College
+                                <span class="required">&#42;</span>
+                            </label>
+                            <input id="school" type="text" name="school" placeholder="Your college or university" class="form-field" required>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="degree-type" class="form-label">Earned Degree</label>
+                            <select name="degree-type" id="degree-type" class="form-field__select">
+                                    <option value="bachelors" selected="selected">Bachelor's</option>
+                                    <option value="mast">Master's</option>
+                                    <option value="phd">PhD</option>
+                                    <option value="postgrad">Post-Graduate</option>
+                                    <option value="other">Other</option>
+                                </select>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="job" class="form-label">Current Occupation
+                                <span class="required">&#42;</span>
+                            </label>
+                            <input id="job" type="text" name="occupation" class="form-field" placeholder="business Owner, student etc." required>
+                        </li>
+
+                        <li class="form-row">
+                            <label for="message" class="form-label">Reason for becoming an Education Conference deligate&#63;</label>
+                            <textarea id="message" class="form-field" name="message" placeholder="Type your message here..."></textarea>
+                        </li>
+
+                        <li class="form-row">
+                            <section>
+                                <h4>Requested Language Translation</h4>
+                                <span class="form-field__radio">
+                                <input id="eng" type="radio" name="language">
+                                <label for="eng">English</label>
+                                </span>
+                                <span class="form-field__radio">
+                                <input id="aze" type="radio" name="language">
+                                <label for="aze">Azerbaijani</label>
+                                </span>
+                            </section>
+                        </li>
+                    </ul>
+                </fieldset>
+                <p>
+                    <button type="submit" class="form--btn btn disabled" name="submit" value="submit_btn" disabled >REGISTER</button>
+                </p>
+            </form>
+		</div>
+	</main>
+
+	<?php include('includes/footer.php'); ?>

@@ -1,0 +1,160 @@
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+[class*="wrapper"] {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0.45em 0.45em 0 0.45em;
+}
+
+[class*="wrapper"]:before,
+[class*="wrapper"]:after,
+.row:before,
+.row:after {
+	display: table;
+	content: " ";
+}
+
+[class*="wrapper"]:after,
+.row:after {
+	clear: both;
+}
+
+.column {
+    display: block;
+    float: left;
+	padding-top: .4rem;
+}
+.column:first-child {
+	padding-left: 0;
+}
+
+.has__shadow {
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .3);
+	border-radius: 4px;
+}
+
+.mobile-view:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.block__inner {
+    display: block;
+    width: 18.7em;
+    font-size: .7em;
+}
+
+.l-full {
+	width: 100%;
+}
+
+.logo__size {
+    width: 13.5em;
+}
+    
+.span-one		{ width: 8.33333%;	}
+.span-two		{ width: 16.66667%; }
+.span-three	{ width: 25%;		}
+.span-four		{ width: 33.33333%; }
+.span-five		{ width: 41.66667%; }
+.span-six		{ width: 50%;		}
+.span-seven	{ width: 58.33333%; }
+.span-eight	{ width: 66.66667%; }
+.span-nine		{ width: 75%;		}
+.span-ten		{ width: 83.33333%; }
+.span-eleven	{ width: 91.66667%; }
+.span-max		{ width: 100%;		}
+
+
+@media only screen and (min-width: 760px) {
+
+	.wrapper {
+		max-width: 90%;
+		padding: .5em;
+	}
+    
+    .footer-text__padded {
+        padding-left: 28px;
+    }
+    
+    .desktop-view--large {
+		display: none;
+	}
+	
+	.l-two {
+		width: 50%;
+	}
+
+    .l-three {
+        width: 33.333%;
+	}
+    
+	.logo__size {
+		width: 13.5em;
+	}
+    
+	.mobile-view {
+		display: none;
+	}
+	.desktop-view {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+
+	.wrapper {
+		width: 90%;
+		max-width: 80rem;
+	}
+	.logo__size {
+		width: 10em;
+	}
+    
+	.desktop-view--large {
+		display: block;
+	}
+    
+	.l-four {
+        width: 27.33333%;
+        padding-left: 2em;
+	}
+    
+    .column__mod {
+    width: 18%;
+    padding-left: 0;
+}
+}
+
+
+.logo-inner {
+	margin: auto;
+}
+
+
+  
+
+
+.map-block {
+	float: left;
+}
+
+
+
+.map-canvas {
+	display: block;
+}

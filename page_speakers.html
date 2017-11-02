@@ -1,0 +1,41 @@
+<?php
+ 	$companyName = "Education Conference";
+    include 'includes/arrays.php';
+	include('includes/header.php');
+?>
+
+    <div class="banner">
+		<?php  include 'includes/navigation.php'; ?>
+        <div class="wrapper block-padding">
+            <div class="is-centered">
+                <h1 class="tagline-text tagline-text__large">Conference Speakers</h1>
+            </div>
+        </div>
+    </div>
+
+
+	<main>
+		<div class="wrapper is-centered block-padding">
+			<?php foreach ($speakerlist as $speaker) {  ?>
+			<section>
+				<img class="bio-image column-list__frame" src="assets/images/speaker_profile/<?php echo $speaker['img']; ?>.jpg" 
+					 alt="<?php echo $speaker['name']; ?>">
+				<section class="padded-block">
+					<div class="text-block">
+						<h2 class="bio-title">
+							<?php echo $speaker['name']; ?>
+						</h2>
+						<div class="caption-bottom">
+							<?php echo $speaker['position']; ?>
+						</div>
+						<p class="left-aligned">
+							<?php echo $speaker['bio']; ?>
+						</p>
+					</div>
+				</section>
+			</section>
+			<?php } ?>
+		</div>		
+	</main>
+
+	<?php include './includes/footer.php'; ?>
